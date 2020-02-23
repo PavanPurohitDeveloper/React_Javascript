@@ -3,3 +3,111 @@ https://github.com
 https://github.com/Akashdeveloper
 https://nodejs.org/en/
 
+
+19th February 2020:
+====================
+> git remote -v // tells which folder you have put code in.
+origin  https://github.com/pavan-purohit/React_Javascript.git (fetch)
+origin  https://github.com/pavan-purohit/React_Javascript.git (push)
+
+npmjs -- There are more than 12 lac packages available. search react
+https://www.npmjs.com/search?q=react
+These packages refer to your code/appln library/someone else has written which we can consume.
+Around 1,14,458 packages found for react.. Every language they have packages..
+These packages are opensource.. 
+
+//Local package or Dependency Or node_modules ( node_modules is folder name)
+That particular folder is referred for one application.
+90% packages will go locally.
+local package is particular to the folder.
+
+//Global package
+Global packages are Installed in system.. These packages are system packages.. I can use for every application.
+Global can be used for any folder.
+only 10% packages will go globally. Global Packages that helps us to :
+> To setup.
+> To Run the appln.
+> To Build the appln.
+
+/*****************************
+Steps to Install local package
+******************************
+1. Must install Nodejs.
+Step1# Create package.json file in the folder -- OneTime exercise
+Step 2# Navigate to the folder where you want to install using cmd/terminal
+Step 3# Write npm install <packagename> Or npm i <packagename> Or npm i <packagename> --save
+Or npm i <packagename> --save-dev
+
+
+> npm install zone.js --> It went to the npm repository and searched for zone.js package 
+						  and installed code to our folder called node_modules.
+	 In package.json file , by defauly automatically it add the dependencies for zone.js
+
+> npm install react
+If you install one, you get other packages installed.. those are called internal dependencies..
+
+==> package-lock.json --> is an informative file..conatins child dependencies..
+						  All those packages which are coming as a child dependencies will be there..
+						  If you dont have this file also appln will run still..
+						  
+==> zone.js and react are parent dependencies and rest are child dependencies..
+==> Main dependencies will be part of package.json file..
+==> When you push the code to github alos, you will not push the node_modules folder also..
+	we never push node_modules folder to GIT.
+	
+> npm install --> It automatically will go to package.json file and downloaded all the packages for you 
+		inside node_modules folder. Based on whatever you specified in dependencies inside package.json file
+     If the dependencies are part of package.json then  automatically install all the packages for you inside node_modules folder.
+
+How to manage versions:?
+-----------------------------		
+ "dependencies": {
+    "react": "^16.12.0",
+    "zone.js": "^0.10.2"
+  }
+ 
+"react": "^16.12.0"  --> when we use capsymbol, It always check for the latest version. It will do major updates.
+"react": "16.12.0"  ---> Its going to install exact this version always. We always go with static package version..
+"react": "~16.12.0"  ---> If you use tild icon, 16. something will be installed whatever latest version. It will not install 17 version.
+
+If you want to install specific version of package ?
+---------------------------------------------------
+npm install react@16.1.1 --> It will install this version only
+npm install react --> It will install latest version.
+
+/*****************************
+Steps to Install Global package
+******************************
+Its going to install in system node_modules folder.
+The installed package will not appear in the package.json
+*** Global dependencies/package will not be part of package.json.
+Those packages you need system access to install globally.
+For production you dont need globally packages.
+
+## For windows
+Step1 - Run cmd as administrator.
+Step2 - npm install -g <package_name>     ( -g stands for global )
+		Ex: npm install -g @aakashdeveloper/create-node-app
+		
+## For Mac/Linux/Unix
+Step1 - Open terminal
+Step2 - sudo npm install -g @aakashdeveloper/create-node-app
+
+==> mention in Readme.md file --> Install global package. but you never add that in the package.json
+
+## For Win
+//one time run//
+Step1 - Run cmd as administrator.
+Step2 - npm install -g create-react-app ( Install the global package )
+
+//Next all time
+Step3 - Navigate to the folder where you want to create an application using cmd/terminal.
+Step4 - create-react-app <appname>
+Step5 - cd <appname>
+Step6 - npm start ( It automatically start the appln and open the browser on port 3000 )
+
+Ex:
+> create-react-app firstapp
+  Very first file it generates package.json file
+  It installing the packages for us automatically.
+  you see folders like -- node_modules, public, src, package.json

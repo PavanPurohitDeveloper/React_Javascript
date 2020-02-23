@@ -16,8 +16,12 @@
 2. let
 3. const
 
+var a ("Declaring")
+a = 10 ("assignment")
+
+//es5
 //1. var:
-compiler run 2 times..We can redeclare variable and we can reassign variable.
+compiler run 2 times.. We can redeclare variable and we can reassign variable.
 
 2. let: //es6
 with the let, we cannot redeclare but can reassign.
@@ -70,7 +74,7 @@ a%b -- modulus -- o/p of modulus is reminder
 10%3 reminder is 1
 
 b%a --> 2 ( if you take smaller by bigger always output is smaller).. there is no concept of carry..
-whenver you divide smaller by bigger, always output will be smaller.
+whenever you divide smaller by bigger, always output will be smaller.
 bigger by smaller - you get actual value
 
 ----------------------------------
