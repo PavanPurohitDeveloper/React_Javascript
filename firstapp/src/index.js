@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Header from './Header';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//Functional component
+const Home = () => {
+    return (
+        <div>
+            <Header />
+            <header></header>
+            <h1>This is React App Training</h1>
+            <h2>This is about our class</h2>
+            <p>lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.lorem ipsum is simply dummy text of the printng and typesetting industry.</p>
+        </div>
+    )
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+    <Home />, document.getElementById('root')
+);

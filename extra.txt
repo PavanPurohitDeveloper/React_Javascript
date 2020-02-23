@@ -111,3 +111,118 @@ Ex:
   Very first file it generates package.json file
   It installing the packages for us automatically.
   you see folders like -- node_modules, public, src, package.json
+
+20 February 2020:
+=================
+These are 3 main important packages
+npm i react-scripts
+npm i react
+npm i react-dom
+
+These 2 gives information about the appln.
+eslintConfig --> This helps in giving warning to correct your syntax.
+browserslist --> what all browsers support.
+
+==> scripts and dependencies are important in package.json file
+Readme.md --> Basically a information file
+
+src folder -- ALl the code of the appln.
+
+Inside public folder:
+index.html file --ALl the content of the appln will load here. All the html content will load in this div 
+					<div id="root"></div>
+manifest.json file --> Basically a metadata of the appln. we dont need this file.
+robots.txt file --> style of a text/font
+package.json --> is the package dependency
+.gitignore --> All those things dont want to push to GIT will keep in this .gitignore file.
+
+
+///Component ////
+Each page is referred as One Component
+Component have its own logic, html and CSS
+We can also have nested Component.
+
+3 types of Component:
+-----------------------
+1. Class Based Component
+2. Functional Component
+3. Hooks Component
+
+Functional Component:
+-----------------------
+1. are light in weight as compare to Class Based Component. 
+light  means they load faster. They are less heavy. Anythung is heavy, it takes time to load.
+2. are Dumb/Display Component ( are used to display the content )
+3. Cannot handle State.
+
+Class Based Component:
+-----------------------
+1. are Heavy in weight as compare to Functional. Bit heavy
+2. are Logical Component ( mainly used to write a logic )
+Suppose you call the API to write a logic to get the data, the data you fetch in a class based Component and 
+pass it to the functional Component to display.
+In React, There is no html file.. We keep one file as Logical file and One File is the display file.
+3. Can Handle State.
+
+//ES6 way: we use this below syntax to write Functional Component
+const add = (a,b) => {return a+b}
+add(1,2)
+
+//we use this below syntax to write Class Based Component
+class Add {
+	constructor(a, b){ 
+	   this.sum = a+b
+	} 
+}
+
+State & Props:
+----------------
+There are 2 Component - Component A and Component B
+State => Is a Local variable. Every Component will have State variable but it should be Class Component.
+Functional Component cannot handle State.
+
+Component A	  ==>prop==>    Component B
+State1 = "a"				State2 = ""
+If I want to pass a data from Component A to Component B then we use Prop.
+prop help you to send data from one Component to another Component. We can pass State as a prop to Functional Component.
+
+There are 3 most important packages/library:
+---------------------------------------------
+react
+react-dom
+react-scripts
+
+react --> is my main library. is JavaScript library for building user interface. ( This is the library )
+react-dom --> is package for working with DOM. 
+		      help you to display. whatever content I write I want to display in index.html file. ( This help to display )
+react-scripts --> is for Configuration scripts for Create React App. helps you to run the application. ( This help to run )
+				  Behind the scene it knows which is the main file *.js to pick ( it looks for webpack.config.js file )
+				  https://github.com/Aakashdeveloper/React_With_TypeScript
+
+*** Note:==> It is not possible to return html from JavaScript. But here in React we can return but we call them JSX.
+JSX (JavaScript XML ) --> JSX refer as when you write html inside the JavaScript that content is referred as JSX. 
+						  you returning as JSX
+
+import React from '<react>';
+import ReactDOM from '<package_name>'; // This ReactDOM will be only in your main file (index.js) Not in every file *.js.
+										  No other file will have ReactDOM.
+
+
+==> If you have more than one tag wrap them in one parent tag ( like div tag ).
+EX: index.js
+
+//Functional component
+const Home = () => {
+    return(
+        <h1>This is React App Training</h1>       
+    )
+}
+
+ReactDOM.render( //ReactDOM.render() is the method to display data
+        <Home/>,document.getElementById('root')
+);
+
+*** Every other component apart from main component to be exported. Only main file will have render().. 
+Ex: Insider Header.js file --> export default Header;
+Component name must be captital letter initial one. Ex: Header. file name can be header.js...
+First Component will render, Second Component will export..If we have multiple Components we use router.
