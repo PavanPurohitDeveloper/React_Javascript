@@ -226,3 +226,87 @@ ReactDOM.render( //ReactDOM.render() is the method to display data
 Ex: Insider Header.js file --> export default Header;
 Component name must be captital letter initial one. Ex: Header. file name can be header.js...
 First Component will render, Second Component will export..If we have multiple Components we use router.
+
+21st February 2020:  
+====================  
+/Class based Component way
+class Header extends Component {
+
+    render() {
+        return (
+            <div>
+                <center>
+                    <h1>React APP</h1>
+                </center>
+                <hr />
+            </div>
+        )
+    }
+}
+
+*** Component will come in the curly braces {} ... 
+render() -- method comes from Component
+
+1. Functional component
+2. Class based component  -- has contructor
+No difference b/w functional based component and Class based component...
+
+### constructor:-  is always the first thing that called inside the class.. Initialize the values..
+All the declarations we do here...Initialize the variable/function/object..
+When you load your page the first thing that got called is class thru Constructor.
+state declaration will happens inside the constructor. state is a local variable. 
+multiple variables we can define inside state..
+
+Constructor is the first thing that will execute. Inside Constructor we define state.
+this.state --> is something we want to be there always.
+
+To declarae the variable inside the state:-
+--------------------------------------------
+this.state={ //this is the state you define as Object, In that variable called state variable.
+	title:'My React App'
+}
+
+super() -- helps to take the value from the Component/parent class. This is required inside constructor.
+			Component is an interface.
+
+binding/Interpolation -- {this.state.title}
+
+How to add the CSS to the component?
+---------------------------------
+By using Inline view way
+By using separate CSS file
+==> In the react we use className='logo'
+
+render() {
+        // const mystyles = 10
+        const mystyles = {
+            headers:{
+                backgroundColor:'teal'
+            },
+            logo:{
+                fontSize:'30px',
+                color:'#fff',
+                textAlign:'center'
+            }
+        }
+
+        return (
+            <div>
+                <center>
+                    {/* <h1>React APP</h1> */}
+                    <h1>{this.state.title}</h1>
+                    <h2>{this.state.details}</h2>
+                    {/* <h2>{mystyles}</h2> */}
+                </center>
+                <hr />
+            </div>
+        )
+    }
+	
+BY using CSS:
+Class -- when you have to give common to the multiple tags.
+Id -- when you want to refer unique element id
+Tag - This is only for tag
+
+==> index.js file should be inside root of src folder. rest all should be inside component folder.
+

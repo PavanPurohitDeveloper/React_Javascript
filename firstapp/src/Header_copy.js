@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './Header.css'
 
 //Class based Component way
 class Header extends Component {
@@ -13,12 +12,24 @@ class Header extends Component {
         }
     }
 
-    render() {    
+    render() {
+        // const mystyles = 10
+        //By using Inline view CSS way
+        const mystyles = {
+            header:{
+                backgroundColor:'teal'
+            },
+            logo:{
+                fontSize:'30px',
+                color:'#fff',
+                textAlign:'center'
+            }
+        }
 
         return (
-            <header>
+            <header style={mystyles.header}>
                 <center>
-                    <div className="logo">{this.state.title}</div>
+                    <div style={mystyles.logo}>{this.state.title}</div>
                     <center>
                         <input></input>
                     </center>                   
